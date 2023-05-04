@@ -20,9 +20,9 @@ export default function Result() {
   useEffect(() => {
     async function getUser() {
       const response = await octokit.request(
-        `GET /users/${location.state.name}`,
+        `GET /users/${location.state.username}`,
         {
-          username: `${location.state.name}`,
+          username: `${location.state.username}`,
           headers: {
             'X-GitHub-Api-Version': '2022-11-28',
           },
@@ -46,8 +46,23 @@ export default function Result() {
 
   return (
     <Layout>
-      <div>
-        <DetailCard userDetails={fetchedData} />
+      <div className='mb-48'>
+        {/* loading page if the information is still loading, fetched results if loaded */}
+        {loading ? (
+          <p className='page-ctr'>Loading...</p>
+        ) : fetchedData === null ? (
+          <div className='mt-36 p-6 text-center md:page-ctr'>
+            <h3 className=' text-lg font-bold text-orange-300'>woah there, pardner! looks like there's no GitHub user with that username!</h3>
+            <h3>give another search and try again.</h3>
+          </div>
+        ) : (
+          <DetailCard userDetails={fetchedData} />
+        )}
+            <Link to='/search'>
+              <div className='text-center mb-36'>
+              <button className='sitebtn'>Back to Search</button>
+              </div>
+            </Link>
       </div>
     </Layout>
   )
