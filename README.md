@@ -1,60 +1,51 @@
-# Interview Coding Challenge
+# Interview Coding Challenge (Response)
 
-This is a basic [Gatsby](https://www.gatsbyjs.com/) project. You have free reign to setup the project in any way you would like. Install as many packages or fonts as you wish. There are no limitations in that regard. The purpose of this exercise is to allow us to get some insight into your coding style, code quality, and organizational skills.
+This is my version of the Interview Coding Challenge for Ayzenberg Group. It's a basic Gatsby Project and I used the GitHub API to index users, access detailed information, and even search for users on GitHub.
 
-Please note, before starting this assessment, message Nadina Gray or Michael Marina to say you are starting, and please message either Nadina Gray or Michael Marina on Upwork to say when you are finishing the assessment. 
 ## Getting Started
 
-```bash
-npm i
-npm run start
-# or
-yarn
-yarn start
-```
+You can find a deployed link of this challenge here:
 
-Open [http://localhost:8000](http://localhost:8000) with your browser to see the result.
+Open [https://main--effulgent-dusk-6b58e3.netlify.app/](https://main--effulgent-dusk-6b58e3.netlify.app/)
 
-You can start editing the project by modifying `pages/index.js` and `pages/profile.js`. The page auto-updates as you edit the file.
+## Tools/Technologies
 
-## Objective
+* HTML
+* CSS
+* JavaScript
+* Node.js
+* React.js
+* GatsbyJS
 
-The goal of this assessment is to determine how well you're able to ingest API data and turn it into a working web app.
+## Additional Dependencies
 
-To begin, you'll want to get familiar with the [Github Users API](https://docs.github.com/en/rest/users/users#get-a-user). It is a free and publicly available API which allows users to request publicly available Github user data. It does require authentication to use, please generate a personal access token before getting started.
-
-Your objective in this challenge is to create a navigable, fully-responsive list of Github users in the browser with the visual treatment represented below:
+* dotenv
+* Reach Router
 
 ### Homepage
 
-![Homepage](src/images/homepage.png)
+![Homepage](/src/images/homepage.png)
 
 ### Profile Page
 
-![Profile Page](src/images/profile.png)
+![Profile Page](/src/images/profile.png)
 
-# Notes
+### Search Page
 
-Since this project is bootstrapped with [Gatsby](https://www.gatsbyjs.com/), you should use Gatsby's `Image` and `Link` components in this challenge. Link is built in, and see [Gatsby Plugin Image](https://www.gatsbyjs.com/plugins/gatsby-plugin-image). Do not use Gatsby's gatsby-node API's to query the API via graphql, please query the REST API within your components themselves.
+![Search Page](/src/images/search.png)
 
-We do not assume you know Gatsby but we do assume you understand how routing works. You will want to get familiar with the way Gatsby handles routes.
+# Comments
 
-Good luck and happy coding!
+I think my favorite moment in this challenge, and like my past data scraping experiences, was realizing how enjoyable coding a project can be when fetching external APIs.
 
-## Timeline
+Once I got the hang of using GitHub's Users API, I started thinking...well...what else can I do?!
 
-How long should this take? Roughly 1 to 2 hours depending on how involved you choose to make it.
+I thought I'd make a simple GitHub User Profile Search feature, where users can search for anyone they'd like to on GitHub based on their GitHub usernames. Thanks to React, I was just able to link the ProfileCard Component from my original code when clicking on a specific user from the index of GitHub users, so I just had to write a new page for the result, and bam! done.
 
-## Submission 
+I've had a lot of fun on this! I did have to incorporate my signature Earth tones for the overall design of the web app, and I can always do more styling on it, but hey! not bad for a couple of hours worth of work :• )
 
-Please make a PR to this repository with your work. Please include a small write-up in markdown, either as a separate file or addendum to this README walking through any necessary steps to set up your code, or explaining your work. We should be able to pull down and run your code without any errors.
+## Bonus Points!
 
-## More About Gatsby
+I chose to deploy using Netlify's continuous deployment via GitHub, so that with every GitHub push on this project, Netlify simply deploys the latest version of the app. No hassle there, love that.
 
-To learn more about Gatsby, take a look at the following resources:
-
-- [Gatsby Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-- [Gatsby API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## Bonus Points
-Use Tailwind CSS. Add tests. Deploy a version of this site.
+Proud to have also incorporated some Tailwind CSS in the mix as well! Keeps my code organized and keeps the design looking good.
