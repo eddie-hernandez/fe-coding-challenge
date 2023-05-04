@@ -1,9 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 import { Octokit } from 'octokit'
 
 export default function ProfileCard({ user }) {
-
   // accessing full names from "get a [individual] user" API
   // not available on index users API
 
@@ -34,7 +33,15 @@ export default function ProfileCard({ user }) {
 
   return (
     <div>
-      <h1>{user.login}</h1>
+      <Link to='/detail' state={{ user: { detailedData } }}>
+        <img
+          src={user.avatar_url}
+          className='w-48 rounded-full border-4 border-stone-800'
+        />
+      </Link>
+      <h1>
+        {detailedData.name === null ? detailedData.login : detailedData.name}
+      </h1>
       <h4>{user.login}</h4>
       <Link to='/detail' state={{ user: { detailedData } }}>
         <button>View Profile</button>

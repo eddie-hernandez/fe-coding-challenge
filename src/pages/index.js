@@ -1,10 +1,9 @@
-import React, {useState, useEffect }from 'react'
+import React, { useState, useEffect } from 'react'
 import Layout from '../components/Layout'
 import ProfileCard from '../components/ProfileCard'
 import { Octokit } from 'octokit'
 
 export default function Home() {
-
   const [state, setState] = useState({
     loading: true,
     fetchedData: [],
@@ -14,7 +13,7 @@ export default function Home() {
     auth: `${process.env.GATSBY_TOKEN}`,
   })
 
-  // embed in use effect to retrieve api info only once after page renders
+  // retrieve api info only once after page renders
   useEffect(() => {
     async function getUsers() {
       const response = await octokit.request('GET /users', {
