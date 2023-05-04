@@ -1,19 +1,35 @@
 import React from 'react'
 
 export default function DetailCard({ userDetails }) {
+  let twitterURL = `https://www.twitter.com/${userDetails.twitter_username}`
+
   return (
     <div className='card grid grid-cols-1 lg:grid-cols-2 mx-10 md:mx-36 2xl:mx-72 my-10 p-5 lg:p-10 gap-x-2'>
-      <div className='flex-col-ctr text-center p-2'>
-        <img
-          src={userDetails.avatar_url}
-          alt={userDetails.name}
-          className='object-fill w-36 lg:w-80 rounded-full border-8 border-stone-800'
-        />
-        <h1 className='mt-4 font-bold text-2xl'>
-          {/* if no full name listed, list username */}
-          {userDetails.name === null ? userDetails.login : userDetails.name}
-        </h1>
-        <h3 className='italic'>(@{userDetails.login})</h3>
+      <div className='flex-col-ctr text-center p-2 gap-y-4'>
+        <div>
+          <img
+            src={userDetails.avatar_url}
+            alt={userDetails.name}
+            className='object-fill w-36 lg:w-72 2xl:w-80 rounded-full border-8 border-stone-800'
+          />
+          <h1 className='mt-4 font-bold text-2xl'>
+            {/* if no full name listed, list username */}
+            {userDetails.name === null ? userDetails.login : userDetails.name}
+          </h1>
+          <h3 className='italic'>(@{userDetails.login})</h3>
+        </div>
+        <div>
+          <h3>{userDetails.location === null ? '' : userDetails.location}</h3>
+          {userDetails.blog === null ? (
+            ''
+          ) : (
+            <a
+              href={userDetails.blog}
+              className='link underline text-green-300 ml-1'
+            >{userDetails.blog}
+            </a>
+          )}
+        </div>
       </div>
       <div className='flex flex-col items-center mt-8 lg:mt-0 lg:items-start gap-y-2 lg:gap-y-4'>
         <div className='flex gap-x-2 xl:gap-x-10 mb-4 lg:mb-16'>
@@ -44,10 +60,18 @@ export default function DetailCard({ userDetails }) {
           <span className='font-bold not-italic'>Company: </span>
           {userDetails.company === null ? 'N/A' : userDetails.company}
         </h5>
-        <h5 className='italic'>
-          <span className='font-bold not-italic'>Twitter: </span>
-          {userDetails.twitter_username === null ? 'N/A' : `@${userDetails.twitter_username}`}
-        </h5>
+        <div className='italic flex-row-ctr'>
+          <h5>
+            <span className='font-bold'>Twitter:</span>
+          </h5>
+          {userDetails.twitter_username === null ? (
+            <h5> N/A</h5>
+          ) : (
+            <a href={twitterURL} className='link underline text-green-300'>
+              <h3 className='ml-1'>@{userDetails.twitter_username}</h3>
+            </a>
+          )}
+        </div>
       </div>
     </div>
   )
