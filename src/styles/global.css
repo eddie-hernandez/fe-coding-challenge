@@ -4,10 +4,31 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background: linear-gradient(#729873, #776454);
+  background-repeat: no-repeat;
+}
+
+.page-ctr {
+  @apply text-center mt-72
+}
+
 .flex-col-ctr {
   @apply flex flex-col justify-center items-center
 }
 
 .flex-row-ctr {
   @apply flex justify-center items-center
+}
+
+.card {
+  @apply rounded-xl border-2 border-gray-300
+}
+
+.sitebtn {
+  @apply mt-2 bg-btnbg border border-blue-800 rounded-2xl py-2 px-4 text-black text-lg
+}
+
+.sitebtn:hover {
+  @apply bg-btnhover;
 }

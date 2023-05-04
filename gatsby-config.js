@@ -14,6 +14,7 @@ module.exports = {
   plugins: [
     'dotenv',
     'octokit',
+    `gatsby-plugin-postcss`,
     'gatsby-plugin-image',
     'gatsby-plugin-sitemap',
     {

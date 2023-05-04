@@ -37,9 +37,16 @@ export default function Home() {
   return (
     <Layout>
       <div>
-        {fetchedData.map((user, index) => (
-          <ProfileCard user={user} key={index} />
-        ))}
+        {/* loading page if the information is still loading, fetched results if loaded */}
+        {loading ? (
+          <p className='page-ctr='>Loading...</p>
+        ) : (
+          <div className='grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 mx-8 lg:mx-36'>
+            {fetchedData.map((user, index) => (
+              <ProfileCard user={user} key={index} />
+            ))}
+          </div>
+        )}
       </div>
     </Layout>
   )
