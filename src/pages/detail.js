@@ -10,7 +10,13 @@ const location = useLocation()
 
 console.log(location)
 
+const user = location.state.user.detailedData
+
+console.log(user)
+
   return (
-    <div>Detail</div>
+    <div>
+      <DetailCard userDetails={user} />
+    </div>
   )
 }
