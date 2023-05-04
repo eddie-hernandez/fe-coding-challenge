@@ -32,8 +32,6 @@ export default function Home() {
 
   const { loading, fetchedData } = state
 
-  console.log(fetchedData)
-
   return (
     <Layout>
       <div>
