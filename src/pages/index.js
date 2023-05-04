@@ -1,13 +1,12 @@
-import * as React from "react"
+import React from 'react'
+import Layout from '../components/Layout'
 
-const IndexPage = () => {
+export default function Home() {
   return (
-    <main>
-    <h1>Github User Viewer</h1>
-    </main>
+    <Layout>
+      <div>index</div>
+    </Layout>
   )
 }
 
-export default IndexPage
-
-export const Head = () => <title>Github User Viewer - Coding Challenge</title>
+export const Head = () => <title>GitBrowse</title>

@@ -1,17 +1,16 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import { Link } from 'gatsby'
+import React from 'react'
 
-const NotFoundPage = () => {
+export default function NotFound() {
   return (
-    <main>
-      <h1>Page not found</h1>
-      <p>
-        Sorry 😔, we couldn’t find what you were looking for.
-      </p>
-    </main>
+    <div>
+      <h2>404</h2>
+      <p>Sorry 😔, we couldn’t find what you were looking for.</p>
+      <Link to='/'>
+        <button>Go To Homepage</button>
+      </Link>
+    </div>
   )
 }
-
-export default NotFoundPage
 
 export const Head = () => <title>Not found</title>
