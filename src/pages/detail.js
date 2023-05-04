@@ -9,15 +9,11 @@ export default function Detail() {
 
   console.log(location)
 
-  const user = location.state.user.detailedData
-
-  console.log(user)
-
   return (
     <Layout>
       <div className='mb-48'>
         <div>
-          <DetailCard userDetails={user} />
+          <DetailCard userDetails={location.state.user.detailedData} />
         </div>
         <Link to='/'>
           <div className='text-center'>
